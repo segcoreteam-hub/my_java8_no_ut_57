@@ -17,7 +17,13 @@
 
     <build>
         <plugins>
-            <!-- Pinned to 3.11.0: host Maven is 3.8.4 (<3.9.0), so plugin 3.13.0+ is not usable here. -->
+            <!--
+                maven-compiler-plugin pinned to 3.11.0.
+                Rationale: the host Maven is 3.8.4 (< 3.9.0), so plugin 3.13.0+ is not usable;
+                plugin 3.0.5 does not exist in Maven Central and no 3.0.x release supports
+                <release>21</release>. 3.11.0 is the newest version compatible with Maven 3.8.4
+                that supports Java 21 compilation.
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
